@@ -3,11 +3,7 @@
 //membuat class
 Class Motor{
     //property
-    public $merk, $nama, $warna;
-    
-    protected $diskon;
-
-    private $harga;
+    private $merk, $nama, $warna, $diskon=0,$harga;
 
     //membuat method
     public function Label(){
@@ -43,7 +39,50 @@ Class Motor{
     public function getHarga(){
         return $this->harga - ($this->harga * $this->diskon / 100);
     }
+
+    public function setHarga($harga){
+        $this->harga = $harga;
+    }
+
+    public function getMerk(){
+        return $this->merk;
+    }
+
+    public function setMerk($merk){
+        //validasi ubah judul harus string
+        // if(!is_string($merk)){
+        //     throw new Exception("Judul Harus String");
+        // }
+        $this->merk = $merk;
+    }
+
+    public function getNama(){
+        return $this->nama;
+    }
+
+    public function setNama($nama){
+        $this->nama = $nama;
+    }
+
+    public function getWarna(){
+        return $this->warna;
+    }
+
+    public function setWarna($Warna){
+        $this->warna = $Warna;
+    }
+
+     public function setDiskon( $diskon)
+    {
+        $this->diskon = $diskon;
+    }
+
+    public function getDiskon(){
+        return $this->diskon;
+    }
 }
+
+
 
 
 class Sport extends Motor{
@@ -64,6 +103,8 @@ class Sport extends Motor{
     }
 }
 
+
+
 class Matic extends Motor{
     public $jmlPenumpang;
 
@@ -71,11 +112,6 @@ class Matic extends Motor{
     {
         parent::__construct($merk, $nama, $warna, $harga);
         $this->jmlPenumpang = $jmlPenumpang;
-    }
-
-    public function setDiskon( $diskon)
-    {
-        $this->diskon = $diskon;
     }
 
     public function GetInfoMotor()
@@ -87,12 +123,14 @@ class Matic extends Motor{
 }
 //Objek Type
 //membuat clas cetak yang dimana selain objek class motor tidak bisa dicetak
-class CetakInfo{
-    public function Cetak(Motor $motor){
-        $str = "{$motor->merk} || {$motor->nama}, Warna : {$motor->warna}";
-        return $str;
-    }
-}
+// class CetakInfo{
+//     public function Cetak(Motor $motor){
+//         $str = "{$motor->merk} || {$motor->nama}, Warna : {$motor->warna}";
+//         return $str;
+//     }
+// }
+
+
 
 //membuat objek
 $Motor1 = new Motor("Yamaha", "Vixion", "Merah", "30000000", 100);
@@ -122,3 +160,8 @@ echo "<hr>";
 
 $Motor3->setDiskon(50);
 echo $Motor3->getHarga();
+
+echo "<hr>";
+
+
+echo $Motor3->setMerk("Honda");
