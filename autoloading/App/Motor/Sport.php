@@ -1,4 +1,4 @@
-<?php
+<?php namespace App\Motor;
 class Sport extends Motor implements Infomotor{
     public $kecMaks;
 

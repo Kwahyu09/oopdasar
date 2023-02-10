@@ -1,4 +1,4 @@
-<?php
+<?php namespace App\Motor;
 class CetakInfo{
     public $daftarMotor = array();
     //atau $motor = []; sama saja

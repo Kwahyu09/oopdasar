@@ -1,4 +1,4 @@
-<?php 
+<?php namespace App\Motor;
 class Matic extends Motor implements Infomotor{
     public $jmlPenumpang;
 

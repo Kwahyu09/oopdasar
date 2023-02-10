@@ -1,4 +1,4 @@
-<?php
+<?php namespace App\Motor;
 abstract class Motor{
     //property
     protected $merk, $nama, $warna, $diskon=0,$harga;
